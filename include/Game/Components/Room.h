@@ -1,5 +1,7 @@
 #pragma once
 #include <memory>
+#include "../Entities/Monster.h"
+#include "../Entities/Item.h"
 
 class Monster;
 class Item;

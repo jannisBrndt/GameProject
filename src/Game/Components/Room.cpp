@@ -14,6 +14,8 @@ Room::Room(RoomType type)
 			item = std::make_unique<Item>("Health Potion", 20);
 		} else if (type == RoomType::TRAP) {
 			trap = true; // activate a trap
+		} else if (type == RoomType::EMPTY) {
+			cleared = true;
 		}
 }
 

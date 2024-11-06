@@ -14,4 +14,8 @@ class Dungeon {
 		// Dungeon Actions
 		void enterNextRoom();
 		bool isCleared() const;
+
+		// for testing
+		int getCurrentRoomIndex() const;
+		const Room& getRoom(int index) const;
 };

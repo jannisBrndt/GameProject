@@ -2,6 +2,7 @@
 #include <cstdlib>
 #include <memory>
 #include <iostream>
+#include <stdexcept>
 
 Dungeon::Dungeon(int numRooms)
 	: currentRoomIndex(0) {
@@ -38,4 +39,15 @@ void Dungeon::enterNextRoom() {
 
 bool Dungeon::isCleared() const {
 	return currentRoomIndex >= rooms.size();
+}
+
+int Dungeon::getCurrentRoomIndex() const {
+	return currentRoomIndex;
+}
+
+const Room& Dungeon::getRoom(int index) const {
+	if (index < 0 || index >= rooms.size()) {
+		throw std::out_of_range("Room index is out of range.");
+	}
+	return *rooms[index];
 }
